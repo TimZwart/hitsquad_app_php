@@ -19,6 +19,7 @@ class Main_page extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->helper('url');
 		$this->load->view('main_page');
 	}
 }
