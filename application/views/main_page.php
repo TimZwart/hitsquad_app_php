@@ -11,7 +11,7 @@
 	<input id="date_button" type="button" value="date"></input>
 	<input id="kissclose_button" type="button" value="kissclose"></input>
 	<input id="fuckclose_button" type="button" value="fuckclose"></input>
-	<script src="js/jquery.js"></script>
-	<script src="js/index.js"></script>
+	<script src="<?php echo base_url();?>js/jquery.js"></script>
+	<script src="<?php echo base_url();?>js/index.js"></script>
 </body>
 </html>
