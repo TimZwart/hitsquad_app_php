@@ -17,12 +17,19 @@ class Pua_log extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	
+	private function login_check()
+	{
+		if(!$this->session->userdata('logged_in')) {
+			redirect('login', 'refresh');
+		}
+	}
 	public function index()
 	{
+		$this->login_check();
 		$this->load->view('jadda');
 	}
 	public function approaches(){
+		$this->login_check();
 		$method = $this->input->server('REQUEST_METHOD');
 		echo $method;	
 		switch($method){
@@ -44,6 +51,7 @@ class Pua_log extends CI_Controller {
 		$this->db->insert('approaches', $data);
 	}
 	public function dates(){
+		$this->login_check();
 		$method = $this->input->server('REQUEST_METHOD');
 		switch($method){
 			case 'POST': $this->post_date();break;
@@ -55,6 +63,7 @@ class Pua_log extends CI_Controller {
 		$this->db->insert('dates',$data);	
 	}
 	public function kisscloses(){
+		$this->login_check();
 		switch($this->input->server('REQUEST_METHOD')){
 			case 'POST': $this->post_kissclose();break;
 		}
@@ -65,6 +74,7 @@ class Pua_log extends CI_Controller {
 		$this->db->insert('kisscloses',$data);	
 	}
 	public function fuckcloses(){
+		$this->login_check();
 		switch($this->input->server('REQUEST_METHOD')){
 			case 'POST': $this->post_fuckclose();break;
 		}

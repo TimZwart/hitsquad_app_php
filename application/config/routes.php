@@ -38,8 +38,7 @@
 |
 */
 
-$route['default_controller'] = "Main_page";
-$route['default_controller'] = "Pua_log";
+$route['default_controller'] = "login";
 $route['404_override'] = '';
 
 

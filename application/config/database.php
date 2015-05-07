@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'tyranids';
-$db['default']['database'] = 'hitsquad_app';
+$db['default']['hostname'] = 'mysql3.000webhost.com';
+$db['default']['username'] = 'a6586278_tim';
+$db['default']['password'] = 'w3bm@$t3r';
+$db['default']['database'] = 'a6586278_HitApp';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

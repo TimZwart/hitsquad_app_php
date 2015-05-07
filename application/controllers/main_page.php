@@ -17,8 +17,15 @@ class Main_page extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+	private function login_check()
+	{
+		if(!$this->session->userdata('logged_in')) {
+			redirect('login', 'refresh');
+		}
+	}
 	public function index()
 	{
+		$this->login_check();
 		$this->load->helper('url');
 		$this->load->view('main_page');
 	}
